@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .origin {
+            width: 150px;
+            height: 180px;
+            border: 1px solid;
+            margin: 20px;
+            display: inline-block
+        }
+        img {
+            width: 150px;
+            height: 180px;
+        }
+        .rotatex {
+            transform: rotateX(50deg);
+        }
+        .rotatey {
+            transform: rotateY(50deg);
+        }
+        #pers {
+            perspective: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <img src="../../images/bg3.jpg" alt="">
+    </div>
+    <div class="origin">
+        <div class="rotatex">
+            <img src="../../images/bg3.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin" >
+        <div class="rotatey">
+            <img src="../../images/bg3.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotatexy">
+            <img src="../../images/bg3.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin" id="pers">
+        <div class="rotatex">
+            <img src="../../images/bg3.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin" id="pers">
+        <div class="rotatey">
+            <img src="../../images/bg3.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

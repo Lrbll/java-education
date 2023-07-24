@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: tomato;
+            color: white;
+        }
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td, th {
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let ko;
+        let ma;
+        let en;
+        let score;
+
+        ko = Number(prompt("국어 점수 입력", ""));
+        ma = Number(prompt("수학 점수 입력", ""));
+        en = Number(prompt("영어 점수 입력", ""));
+
+        sum = ko + ma + en
+        score = sum/3
+
+        var str = "<table>";
+            str += "<tr>";
+            str += "<th>국어</th>";
+            str += "<th>수학</th>";
+            str += "<th>영어</th>";
+            str += "<th>평균</th>";
+            str += "</tr>";
+            str += "<tr>";
+            str += "<td>";
+            str += ko;
+            str += "</td>";
+            str += "<td>";
+            str += ma;
+            str += "</td>";
+            str += "<td>";
+            str += en;
+            str += "</td>";
+            str += "<td>";
+            str += score;
+            str += "</td>";
+            str += "</tr>";
+            str += "</table>";
+        document.write(str);
+
+        // if ~ else (조건 3개부터는 else if 로)
+        let message = "시험결과";
+        if (score >= 90) {
+            message = "A";
+        } else if (score >= 80) {
+            message = "B"
+        } else if (score >= 70) {
+            message = "C"
+        } else {
+            message = "제적입니다"
+        }
+        document.write("<h2>" + message + "</h2>");
+
+    </script>
+</body>
+</html>

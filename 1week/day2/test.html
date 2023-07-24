@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹페이지 제목부분</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 500px;
+    }
+  
+    th, td {
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+<body>
+  이미지 테스트
+  <img src="../../images/home.jpg" alt="" width="100">
+  <!-- 상위 폴더 ../../images/이미지명.jpg
+  같은 위치 ./ 이거나 images/이미지명.jpg -->
+
+  <h1>제목을 나타내는 태그</h1>
+  <h2>제목을 나타내는 태그</h2>
+  <h3>제목을 나타내는 태그</h3>
+  <h4>제목을 나타내는 태그</h4>
+  <h5>제목을 나타내는 태그</h5>
+  <h6>제목을 나타내는 태그</h6>
+
+  <p>문단 태그로 표현</p>
+  문단 태그로 표현 문단
+  태그로 표현 <br> 줄바꿈 문단 태그로 표현
+
+  표 만들기
+  <table border>
+    <tr>
+      <td rowspan="2">자산: 현금<br>현금 외 자산</td>
+      <td>부채: 차입금</td>
+    </tr>
+      <td>자본: 자본금, 이익잉여금</td>
+    </tr>
+  </table>
+
+  <a href="http://www.google.com"  target="_blank">구글 사이트</a>
+  <!--
+    iframe을 이용할 때,
+
+    target="_top"으로 주면 현재 창에서 링크로 이동되고 전체화면으로 바뀜
+
+    _blank로 주면 새창에서 열림
+  -->
+
+
+  <table>
+    <caption><b>Modern Browser</b></caption>
+    <caption>국내에서 자주 사용하는 모던 브라우저</caption>
+    <tr>
+      <th>브라우저</th><th>제조업체</th><th>다운로드</th>
+    </tr>
+    <tr>
+      <th>크롬(Chrome)</th><td>Google</td><td><a href="http://www.google.com/chrome/" target="_blank">http://www.google.com/chrome/</a></td>
+    </tr>
+    <tr>
+      <th>파이어폭스(Firefox)</th><td>Mozilla</td><td><a href="http://www.mozilla.org/ko/firefox/" target="_blank">http://www.mozilla.org/ko/firefox/</a></td>
+    </tr>
+    <tr>
+      <th>엣지(Edge)</th><td>Microsoft</td><td><a href="http://www.microsoft.com/ko-kr/windows/microsoft-edge" target="_blank">http://www.microsoft.com/ko-kr/windows/microsoft-edge</a></td>
+    </tr>
+  </table>
+</body>
+</html>

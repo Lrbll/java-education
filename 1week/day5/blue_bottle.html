@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Bottle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pangolin&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      padding: 0;
+      margin: 0 auto;
+      background: url("https://img.freepik.com/premium-photo/beige-paper-texture-background-kraft-paper-for-aesthetic-creative-design_364465-787.jpg?w=1380");
+    }
+    
+    header {
+      height: 80px;
+      padding: 15px 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    .navbar {
+      width: 70vh;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .navbar ul {
+      list-style: none;
+      padding-left: 0;
+      margin: auto 30px;
+      font-family: 'Pangolin', cursive;
+    }
+    .navbar ul li {
+      display: inline;
+      margin: 0 20px;
+      font-size: larger;
+      color: black;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .navbar ul li:hover {
+      color: salmon;
+      transition-duration: 0.2s;
+      padding: 2px;
+    }
+    .sub1{
+      height: 50vh;
+      background: url("../../images/fall.jpg") no-repeat center fixed;
+      background-size: cover;
+    }
+    .sub2 {
+      height: 50vh;
+      background: url("../../images/walk.jpg") no-repeat center scroll;
+      background-size: cover;
+    }
+    .main {
+      position: relative;
+      height: 70vh;
+      background: url("../../images/bluebottle_background.jpg") no-repeat center scroll;
+      background-size: cover;
+    }
+    .main_text {
+      position: absolute;
+      top: 40%;
+      right: 10%;
+      font-size: 1.1vw;
+      color: black;
+      padding: 0 10px;
+      text-align: end;
+      font-weight: bolder;
+      letter-spacing: 1.5px;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .info_btn {
+      margin-left: auto;
+      width: max-content;
+      border: 3px solid black;
+      background-color: whitesmoke;
+      padding: 5px 10px;
+      border-radius: 30px;
+      box-shadow: 3px 3px 5px black;
+      font-size: 1vw;
+      color: black;
+    }
+    .info_btn:hover {
+      transform: scale(0.9);
+      transition-duration: 0.2s;
+    }
+    .social_icon {
+      width: 200px;
+      margin: auto 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .social_icon img {
+      width: 50px;
+      margin: 0 15px;
+    }
+    .social_icon img:hover {
+      transform: scale(1.2);
+      opacity: 0.7;
+      transition-duration: 0.2s;
+    }
+    .footer_text {
+      display: flex;
+      justify-content: center;
+      height: 80px;
+      background-color: rgb(43, 43, 43);
+      color: whitesmoke;
+    }
+    .footer_text p {
+      padding: 10px 3px;
+    }
+    .footer_menu {
+      width: 100vh;
+      margin: 30px auto 60px auto; /* 시계방향 (top right botto, left) */
+      display: flex;
+      flex-flow: wrap-reverse;
+      justify-content: space-around;
+    }
+    .footer_menu ul {
+      list-style: none;
+    }
+    .footer_menu p {
+      font-size: large;
+      font-weight: bold;
+    }
+    .footer_menu a {
+      color: gray;
+      line-height: 40px;
+    }
+    .footer_info {
+      height: 80px;
+      background-color: rgb(43, 43, 43);
+    }
+    .footer_info ul {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      list-style: none;
+      margin: 0 auto;
+    }
+    .footer_info a {
+      color: whitesmoke;
+      margin: 0 20px;
+      line-height: 80px;
+    }
+    .divide_line {
+      width: 1px;
+      height: 16px;
+      border: 1px whitesmoke;
+      background-color: whitesmoke;
+      margin: auto 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="navbar">
+        <a href="#"><img src="../../images/bluebottle_logo.png" alt="" height="70px"></a>
+        <ul>
+          <a href="#"><li>about</li></a>
+          <a href="#"><li>cafes</li></a>
+          <a href="#"><li>menu</li></a>
+          <a href="#"><li>company</li></a>
+          <a href="#"><li>news</li></a>
+        </ul>
+      </div>
+    </header>
+    <section class="main">
+      <div class="main_text">
+        <h1>WELCOME EVERYONE<i class="fa-solid fa-mug-hot"></i></h1>
+        <p>블루보틀을 소개해드릴게요</p>
+        <a href="#"><p  class="info_btn">블루보틀 소개</p></a>
+      </div>
+    </section>
+    <section class="sub1">
+
+    </section>
+    <section class="sub2">
+
+    </section>
+    <footer>
+      <section class="footer_text">
+        <p>Contact with us</p>
+        <div class="social_icon">
+          <a href="#"><img src="../../images/free-icon-instagram-717391.png" alt=""></a>
+          <a href="#"><img src="../../images/free-icon-facebook-717385.png" alt=""></a>
+          <a href="#"><img src="../../images/free-icon-twitter-717401.png" alt=""></a>
+        </div>
+      </section>
+      <section class="footer_menu">
+        <ul>
+          <p>상위메뉴</p>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+        </ul>
+        <ul>
+          <p>상위메뉴</p>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+        </ul>
+        <ul>
+          <p>상위메뉴</p>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+        </ul>
+        <ul>
+          <p>상위메뉴</p>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+        </ul>
+        <ul>
+          <p>상위메뉴</p>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+          <li><a href="#">하위메뉴</a></li>
+        </ul>
+        <a href="#"><img src="../../images/bluebottle_logo.png" alt=""></a>
+      </section>
+      <section>
+        <div class="footer_info">
+          <ul>
+            <a href="#"><li>이용약관</li></a>
+            <div class="divide_line"></div>
+            <a href="#"><li>이용약관</li></a>
+            <div class="divide_line"></div>
+            <a href="#"><li>이용약관</li></a>
+            <div class="divide_line"></div>
+            <a href="#"><li>이용약관</li></a>
+            <div class="divide_line"></div>
+            <a href="#"><li>이용약관</li></a>
+          </ul>
+        </div>
+      </section>
+    </footer>
+  </div>
+</body>
+</html>

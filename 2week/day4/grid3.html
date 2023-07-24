@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 700px;
+            display: grid; /* 부모 요소에 grid */
+            grid-template-columns: repeat(3, 1fr); /* 3개의 컬럼에 한프레임씩 넣겠다? */
+            grid-template-rows: repeat(auto-fill, 3, 100px); /* 3개의 열에 높이 100px씩주겠다? */
+            grid-template-areas: 
+                "box1 box1 box1"
+                "box2 box3 box3"
+                "box2 . box4"
+            ;
+        }
+        .box1 {
+            background-color: lightblue;
+            grid-area: box1;
+        }
+        .box2 {
+            background-color: lightcoral;
+            grid-area: box2;
+        }
+        .box3 {
+            background-color: lightsalmon;
+            grid-area: box3;
+        }
+        .box4 {
+            background-color: lightgreen;
+            grid-area: box4;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      font-size: x-large;
+      width: max-content;
+      padding: 10px 20px;
+      text-align: center;
+      border: 1px solid
+    }
+    /* .menu :nth-of-type(n+2) {
+      display: none;
+    }
+    .menu:hover :nth-of-type(n+2) {
+      display: block;
+    }
+    .subMenu {
+      border: 1px solid lightblue;
+      background-color: lightblue;
+    }
+
+    .btnMenu {
+      border: 1px solid black;
+    }
+    .btnDiv li:nth-child(n) {
+      display: none;
+    }
+    .btnDiv:hover li:nth-child(n) {
+      display: block;
+    } */
+    .wrap {
+      width: 150px;
+      text-align: center;
+    }
+    button {
+      border: none;
+      font-size: 30px;
+    }
+    .wrap:hover .smWrap {
+      display: block;
+    }
+    .smWrap {
+      display: none;
+      margin-top: 20px;
+    }
+    .smWrap a {
+      display: block;
+      /* opacity: 0.5; */
+      border: 1px solid rgb(202, 255, 202, 0.9); /* text가 함께 투명해지는 것을 방지하기 위해 background 속성에만 0.5의 투명도를 준다 */
+      background-color: rgb(202, 255, 202, 0.5);
+      padding: 10px 20px;
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="menu">
+    <ul>
+      <li>드롭다운</li>
+      <li class="subMenu">서브메뉴1</li>
+      <li class="subMenu">서브메뉴2</li>
+      <li class="subMenu">서브메뉴3</li>
+    </ul>
+  </div>
+
+  <div class="btnDiv">
+    <button type="btnMenu">
+      드롭다운
+    </button>
+    <ul class="btnList">
+      <li class="subMenu">메뉴1</li>
+      <li class="subMenu">메뉴2</li>
+      <li class="subMenu">메뉴3</li>
+      <li class="subMenu">메뉴4</li>
+    </ul>
+  </div> -->
+
+  <!-- 선생님 답 -->
+  <div class="wrap">
+    <button>드롭다운</button>
+    <div class="smWrap">
+      <a href="#">서브메뉴1</a>
+      <a href="#">서브메뉴2</a>
+      <a href="#">서브메뉴3</a>
+    </div>
+  </div>
+</body>
+</html>

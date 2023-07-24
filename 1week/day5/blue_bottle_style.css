@@ -1,0 +1,97 @@
+body {
+  padding: 0;
+  margin: 0 auto;
+  background: url("https://img.freepik.com/premium-photo/beige-paper-texture-background-kraft-paper-for-aesthetic-creative-design_364465-787.jpg?w=1380");
+}
+
+header {
+  height: 80px;
+  padding: 15px 0;
+}
+a {
+  text-decoration: none;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+.navbar ul {
+  list-style: none;
+  padding-left: 0;
+  margin: auto 30px;
+  font-family: 'Pangolin', cursive;
+}
+.navbar ul li {
+  display: inline;
+  margin: 0 20px;
+  font-size: larger;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.navbar ul li:hover {
+  color: salmon;
+  transition-duration: 0.2s;
+  padding: 2px;
+}
+.sub1{
+  height: 50vh;
+  background: url("../../images/fall.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+.sub2 {
+  height: 50vh;
+  background: url("../../images/walk.jpg") no-repeat center scroll;
+  background-size: cover;
+}
+.main {
+  position: relative;
+  height: 70vh;
+  background: url("../../images/bluebottle_background.jpg") no-repeat center scroll;
+  background-size: cover;
+}
+.main_text {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  font-size: 1.1vw;
+  color: black;
+  padding: 0 10px;
+  text-align: end;
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.info_btn {
+  margin-left: auto;
+  width: max-content;
+  border: 3px solid black;
+  background-color: whitesmoke;
+  padding: 5px 10px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px black;
+  font-size: 1vw;
+  color: black;
+}
+.info_btn:hover {
+  transform: scale(0.9);
+  transition-duration: 0.2s;
+}
+.footer_text {
+  font-family: 'Pangolin', cursive;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.social_icon {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.social_icon img {
+  width: 50px;
+}
+.social_icon img:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+  transition-duration: 0.2s;
+}

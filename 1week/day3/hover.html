@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+    li {
+      display: inline;
+      border: solid 2px black; /* 실선, 두께, 색상 */
+      padding: 5px 20px;
+      margin: 5px;
+    }
+    li:hover {
+      background-color: black;
+      color: whitesmoke;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    .btn {
+      padding: 10px 30px;
+      border: solid 1px gray;
+      background-color: olive;
+      border-radius: 30px;
+      color: whitesmoke;
+      box-shadow: 3px 3px 6px black;
+    }
+    .btn:hover {
+      background-color: pink;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <a href="#"><li>버튼1</li></a>
+    <a href="#"><li>버튼2</li></a>
+    <a href="#"><li>버튼3</li></a>
+  </ul><br><br>
+  <a href="#" class="btn">커서를 올리면 분홍색</a>
+</body>
+</html>

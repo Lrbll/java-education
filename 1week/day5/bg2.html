@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .section1 {
+      width: 400px;
+      height: 400px;
+      border: 1px solid black;
+      background-image: url("../../images/bg4.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    /* 이미지 두개 한번에 넣기 */ 
+    .section2 {
+      width: 400px;
+      height: 1200px;
+      border: 1px solid black;
+      background-image: url("../../images/bg2.jpg"), url("../../images/bg3.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: 50% 50%, 20% 20%;
+    }
+    /* 한줄에 속성 여러개 넣기 */
+    article {
+      height: 400px;
+      width: 400px;
+      border: 1px solid;
+      background: url("../../images/bg1.jpg") no-repeat 50% 0;
+    }
+    /*
+      background-repeat: no-repeat; 배경 반복하지 않는다
+      background-repeat: repeat-x; 가로로 이미지 반복
+      background-repeat: repeat-y; 세로로 이미지 반복
+
+      background-position: center; 가운데로
+      background-position: right bottom; 오른쪽 아래로
+      background-position: 20px 60px; 위치 x20 y60
+      background-position: 100% 50%; 오른쪽 끝 위에서 중앙
+
+      backgroud-size: contain; 비율유지 영역안에 가득 채우기
+      backgroud-size: cover; 배경이미지가 잘리더라도 채움
+    */
+  </style>
+</head>
+<body>
+  <section class="section1">
+
+  </section>
+  <section class="section2">
+
+  </section>
+  <article>
+
+  </article>
+</body>
+</html>

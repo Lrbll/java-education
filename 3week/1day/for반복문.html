@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1부터 5까지 더하기
+        let sum = 0;
+        sum += 1; // sum = sum+1과
+        sum += 2;
+        sum += 3;
+        sum += 4;
+        sum += 5;
+        document.write("1부터 5까지 합 " + sum + "<br>");
+
+        // for문으로 1부터 5까지 더하기
+        let sumFor = 0;
+
+        for (let i=1; i<6; i++) { // (초기값, 조건, 증가식)
+            sumFor += i; // sumFor = sumFor + i
+        } 
+        document.write("1부터 5까지 for문 이용 " + sumFor);
+
+        // 🍙 for문을 이용하여 1000까지 더하기
+        let total = 0;
+        // let i; > i를 for문 안에서 정의
+        for (let i=1; i<=1000; i++) {
+            total += i;
+        }
+        document.write("<br>1부터 1000까지의 합 = ", total);
+    </script>
+</body>
+</html>

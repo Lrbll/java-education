@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parents1 {
+            display: grid;
+            /* 화면을 꽉 채울 만큼 컬럼 너비를 늘려서 표시 */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            margin-bottom: 20px;
+        }
+        .parents2 {
+            display: grid;
+            /* 컬럼 최소 너비 만큼만 채워서 표시 */
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+        .box {
+            padding: 15px;
+        }
+        .box:nth-child(odd) {
+            background-color: lightcoral;
+        }
+        .box:nth-child(even) {
+            background-color: lightskyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>auto-fit 일 때</h1>
+    <p>화면이 넓을 때에는 남는 공간 없이 꽉 채워서 컬럼 표시</p>
+    <div class="parents1">
+        <div class="box">ㄱㄴㄷㄹ</div>
+        <div class="box">box2 ㄱㄴㄷㄹ</div>
+        <div class="box">box3 ㄱㄴㄷㄹ</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+        <div class="box">box9</div>
+        <div class="box">box10</div>
+    </div>
+
+    <h1>auto-fill 일 때</h1>
+    <p>컬럼 최소 너비 만큼만 채워서 표시</p>
+    <div class="parents2">
+        <div class="box">ㄱㄴㄷㄹ</div>
+        <div class="box">box2 ㄱㄴㄷㄹ</div>
+        <div class="box">box3 ㄱㄴㄷㄹ</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+        <div class="box">box9</div>
+        <div class="box">box10</div>
+    </div>
+</body>
+</html>

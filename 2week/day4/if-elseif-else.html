@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1;
+        let num2;
+        num1 = Number(prompt("숫자를 입력해주세요", ""));
+        num2 = num1 % 3; // % : 나머지 값을 구함
+
+        let message = "숫자";
+        if (num2 == 0) { // 비교연산자 ==
+            message = "3의 배수입니다.";
+        } else {
+            message = "3의 배수가 아닙니다.";
+        }
+        document.write(message);
+    </script>
+</body>
+</html>

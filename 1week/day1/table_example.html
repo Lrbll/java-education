@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border: 1px solid;
+      border-collapse: collapse;
+      width: 500px;
+      
+    }
+    th,td {
+      border: 1px solid;
+      width: 30px;
+    }
+    tr > td:nth-child(odd) {
+      background-color: rgb(150, 150, 255);
+    }
+    tr > td:nth-child(even) {
+      background-color: rgb(202, 196, 196);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h3>상품구성</h3>
+  </div>
+  <table>
+    <caption>실속형과 고급형 상품 구성</caption>
+    <thead>
+      <tr class="navy">
+        <th>용도</th> <th>중량</th> <th>개수</th> <th>가격</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="grey">
+        <td>실속형</td> <td colspan="2">3kg</td> <td>17,000원</td>
+      </tr>
+      <tr class="navy">
+        <td>실속형</td> <td>5kg</td> <td>18~25과</td> <td>25,000원</td>
+      </tr>
+      <tr class="grey">
+        <td>고급형</td> <td rowspan="2">3kg</td> <td>11~16과</td> <td>28,000원</td>
+      </tr>
+      <tr class="navy">
+        <td>고급형</td> <td>18~25과</td> <td>47,000원</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <h3>셀 합치기 연습</h3>
+    <table>
+      <tr>
+        <th>이름</th> <th></th> <th>연락처</th> <th></th>
+      </tr>
+      <tr>
+        <th>주소</th> <th colspan="3">
+      </tr>
+      <tr>
+        <th>공부하는것</th> <th colspan="3">
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

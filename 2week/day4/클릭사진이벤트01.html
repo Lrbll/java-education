@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vh;
+        }
+        #item {
+            width: max-content;
+            margin: 0 auto;
+        }
+        img {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            box-shadow: 2px 2px 5px black;
+        }
+        .box {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            /* transition: all 1s; */
+        }
+        button {
+            cursor: pointer;
+            padding: 5px 8px;
+            border: 0.5px solid gray;
+            border-radius: 15px;
+            font-weight: bold;
+            color: whitesmoke;
+            background-color: rgb(126, 83, 161);
+            box-shadow: 2px 2px 5px black;
+            transition: all 0.2s;
+            margin: auto;
+        }
+        .over {
+            position: absolute;
+            top: 70%;
+            right: 10%;
+        }
+        button:hover {
+            transform: scale(0.9);
+        }
+        .detail {
+            width: 300px;
+            display: none;
+        }
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="item">
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZCx8MmADrTneFRbbeK2vbNpwiNKhp1cqHiw&usqp=CAU" alt="">
+            <button class="over" id="open" onclick="showDetail()">상세설명 보기</button>
+        </div>
+        <div id="desc" class="detail">
+            <h4>등심붓꽃</h4>
+            <p>
+                북아메리카 원산으로 각지에서 관상초로 흔히 심고 있는 귀화식물이다.
+                길가나 잔디밭에서 흔히 볼 수 있다.
+                아주 작은 씨앗을 무수히 많이 가지고 있는데
+                바람을 이용해 씨앗들을 날려보내거나,
+                뿌리 줄기를 통해 동일한 개체들을 많이 만들어 냄으로써 번식한다.
+            </p>
+            <button id="close" onclick="hideDetail()">상세설명 닫기</button>
+        </div>
+    </div>
+
+    <script>
+        function showDetail() {
+            //상세 설명 부분을 화면에 표시
+            document.querySelector("#desc").style.display = "block";
+            document.querySelector("#open").style.display = "none";
+            document.querySelector("#item").style.transform= "matrix(1.2, 0, 0, 1.2, 0, 200)";
+            document.querySelector("#item").style.transition= "all 1s";
+        }
+        function hideDetail() {
+            //상세 설명 부분을 화면에 표시
+            document.querySelector("#desc").style.display = "none";
+            document.querySelector("#open").style.display = "block";
+            document.querySelector("#item").style.transform= "none";
+        }
+    </script>
+</body>
+</html>

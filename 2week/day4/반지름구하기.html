@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let result;
+        let radius;
+        radius = prompt("원의 반지름을 입력하시오.", "입력");
+        result = radius*radius*3.14
+        document.write("원의 넓이는 " + result + " 입니다. <br>" )
+
+        let d;
+        let h;
+        d = prompt("사각형 가로 길이 입력", "입력");
+        h = prompt("사각형 세로 길이 입력", "입력");
+        result = d*h
+        document.write("사각형의 넓이는 " + result + " 입니다. <br>" )
+        
+        d = prompt("삼각형 가로 길이 입력", "입력");
+        h = prompt("삼각형 세로 길이 입력", "입력");
+        result = d*h/2
+        document.write("삼각형의 넓이는 " + result + " 입니다." )
+        
+    </script>
+</body>
+</html>

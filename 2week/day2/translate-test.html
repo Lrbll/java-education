@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(204, 204, 255);
+        }
+        .container {
+            width: 900px;
+            margin: 0 auto;
+        }
+        .title {
+            font-size: x-large
+        }
+        .title span {
+            font-weight: bolder;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .card {
+            width: 200px;
+            border: 1px solid rgb(201, 201, 201);
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: rgb(218, 232, 236);
+            box-shadow: 5px 5px 10px grey;
+        }
+        .card:hover {
+            transform: translateY(-20px);
+        }
+        .card-title {
+            font-size: larger;
+            font-weight: bold;
+        }
+        .card-info {
+            font-weight: bold;
+        }
+        .card span {
+            font-size: small;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="title">국민과 함께 성장하는 <span>글로벌 주택금융 리더</span></p>
+        <div class="cards">
+            <div class="card">
+                <p class="card-title">아낌e-보금자리론</p>
+                <p class="card-info">0.1% 더 저렴한 금리</p>
+                <span>최대</span>
+                <h5>주택가격 6억원</h5>
+                <div class="card-img"><img src="../../images/house.png" alt="" width="200px"></div>
+            </div>
+            <div class="card">
+                <p class="card-title">아낌e-보금자리론</p>
+                <p class="card-info">0.1% 더 저렴한 금리</p>
+                <span>최대</span>
+                <h5>주택가격 6억원</h5>
+                <div class="card-img"><img src="../../images/house.png" alt="" width="200px"></div>
+            </div>
+            <div class="card">
+                <p class="card-title">아낌e-보금자리론</p>
+                <p class="card-info">0.1% 더 저렴한 금리</p>
+                <span>최대</span>
+                <h5>주택가격 6억원</h5>
+                <div class="card-img"><img src="../../images/house.png" alt="" width="200px"></div>
+            </div>
+        </div>
+        <div style="margin-top: 100px;">
+            <p style="font-size: smaller;">부산시 남구 문현금융로40(문현동) 부산 국제금융센터 한국주택금융공사 콜센터 1688-8114</p>
+        </div>
+    </div>
+</body>
+</html>

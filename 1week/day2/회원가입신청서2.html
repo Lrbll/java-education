@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 및 추가정보</title>
+  <style>
+    #container {
+      width: 450px;
+      margin: auto;
+    }
+    fieldset {
+      background-color: white;
+      margin: 10px auto;
+    }
+    /* input 태그는 span이나 div로 감싼 후,
+    text-align 설정을 해주거나
+    margin auto & width 지정을 해주면 위치를 옮길 수 있다  */
+    #buttons {
+      text-align: end;
+      
+    }
+    li {
+      list-style: none;
+      padding: 1px;
+    }
+    .login_btn {
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body style="background-color: rgb(205, 218, 214);">
+  <div id="container">
+    <h1>회원정보 입력</h1>
+    <form action="">
+      <input type="button" value="공지사항 보기" onclick="window.open('./test.html')">
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <ul>
+          <li>
+            <label for="uid">아이디</label>
+            <input type="text" placeholder="아이디 입력" id="uid">
+          </li>
+          <li>
+            <label for="pwd">비밀번호</label>
+            <input type="password" placeholder="비밀번호 입력" id="pwd">
+          </li>
+          <li><div id="login_btn">
+            <input type="submit" value="로그인">
+            <input class="login_btn" type="image" src="../../images/login_btn.png" width="50px">
+          </div></li>
+        </ul>
+        
+      </fieldset>
+    
+      <fieldset>
+        <legend>추가 정보</legend>
+        <ul>
+          <li>
+            <label for="umail">메일주소</label>
+            <input type="email" placeholder="abcd@xxx.com" id="umail">
+          </li>
+          <li>메일수신
+            <input type="radio" name="mailing" value="mailing_y" >
+            <label for="mailing_y">메일수신 동의</label>
+            <input type="radio" name="mailing" value="mailing_n" >
+            <label for="mailing_n">메일수신 거부</label>
+          </li>
+        </ul>
+  
+        <ul>
+          <li>
+            <label for="phoneNumber">연락처</label>
+            <input type="tel" id="phoneNumber" placeholder="010-1234-5678" size="13" maxlength="13">
+          </li>
+          <li>
+            <label for="" id="birthday">생년월일
+              <input type="date">
+            </label>
+          </li>
+          <li>
+            <label for="hobby">취미</label>
+            <input type="checkbox" id="hobby" value="hobby_1">독서
+            <input type="checkbox" id="hobby" value="hobby_1">음악감상
+            <input type="checkbox" id="hobby" value="hobby_1">운동
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <label for="path">가입경로</label>
+            <select name="" id="path">
+              <option value="">블로그</option>
+              <option value="">검색</option>
+              <option value="">인스타그램</option>
+              <option value="">기타</option>
+            </select>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <label for="memo">메모
+              <textarea name="" id="memo" placeholder="메모를 입력해주세요" cols="30" rows="10"></textarea>
+            </label>
+          </li>
+        </ul>  
+      </fieldset>
+      <div id="buttons">
+        <input type="submit" value="제출">
+        <input type="reset" value="취소">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

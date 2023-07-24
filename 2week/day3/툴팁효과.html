@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip {
+            cursor: pointer;
+        }
+        .tooltip-content {
+            background-color: tomato;
+            width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            font-weight: 800;
+            text-align: center;
+            /* visibility: hidden;  */
+            display: none;
+        }
+        .tooltip:hover .tooltip-content { /* 바깥 div에 마우스 올렸을 때 안쪽 div가 보임 */
+            /* visibility: visible;  */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>툴팁효과 visibility</h1>
+    <p>
+        visibility 속성은 화며에서 감추기만 할 뿐 <br>
+        원래 요소가 있는 공간은 그대로 차지합니다. <br>
+        반면에, display: none; 은 공간을 차지 하지않습니다.
+        (display: block;)    
+    </p>
+
+    <div class="tooltip">
+        <span>여기에 마우스를 올려보세요!</span>
+        <div class="tooltip-content">
+            <p>
+                마우스를 올려야 나타나는 툴팁 부분
+            </p>
+        </div>
+    </div>
+</body>
+</html>

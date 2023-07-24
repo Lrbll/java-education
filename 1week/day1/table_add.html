@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 500px;
+    }
+    td, th {
+      width: 30px;
+    }
+  </style>
+</head>
+<body>
+  <table border>
+    <caption>같은 색상의 과일&동물</caption> <!-- 테이블 전체에 해당하는 제목 -->
+    <thead>
+    <tr> <!-- table row 줄(행)을 정의 <td><th> 포함해야만 사용가능-->
+      <th>번호</th> <th colspan="2">주색상</th> <th>동물</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td> <td rowspan="2">노랑</td> <td>바나나</td> <td>병아리</td>
+    </tr>
+    <tr>
+      <td>2</td><td>라임</td> <td>도마뱀</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td>합계</td> <td>2개</td> <td>2개</td> <td>2개</td>
+    </tr>
+    </tfoot>
+  </table>
+  <!-- table의 head. body, foot을 구분해주는 태그가 있다.-->
+</body>
+</html>

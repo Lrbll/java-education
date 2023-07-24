@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h3 {
+      margin-left: 10px;
+    }
+    article {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .parent {
+      width: 200px;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid lightgray;
+      align-items: center;
+      font-weight: bold;
+    }
+    .price {
+      font-size: small;
+    }
+    .hobby {
+      margin-top: 200px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+    .hobby div {
+      width: 350px;
+      margin: 0 30px;
+    }
+    .hobby_img {
+      background-image: url("../../images/walk.jpg") no-repeat scroll;
+      background-size: contain;
+      background-position: center;
+      border: 1px dashed;
+    }
+    .hobby_text {
+      border: 1px solid gray;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: x-large;
+      box-sizing: border-box;
+    }
+    span {
+      color: lightgray;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <hr>
+    <h3>new arrivals</h3>
+    <article>
+      <div class="parent">
+        <div>kol cup</div>
+        <div class="price">95$</div>
+      </div>
+      <div class="parent">
+        <div>kol cup</div>
+        <div class="price">95$</div>
+      </div>
+      <div class="parent">
+        <div>kol cup</div>
+        <div class="price">95$</div>
+      </div>
+      <div class="parent">
+        <div>kol cup</div>
+        <div class="price">95$</div>
+      </div>
+    </article>
+  </section>
+  <section class="hobby">
+    <div class="hobby_img">
+    </div>
+    <div class="hobby_text">
+      <p>
+        what started as a hobby and a way to pass time, evolved into a real passion.
+        <br>
+        <span>our story</span>
+      </p>
+    </div>
+  </section>
+</body>
+</html>

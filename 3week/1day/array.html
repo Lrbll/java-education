@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let fruit = "apple";
+        // console.log("과일 이름은?" + fruit);
+        // let fruit2 = "orange";
+        // console.log("과일 이름은?" + fruit2);
+        // let fruit3 = "melon";
+        // console.log("과일 이름은?" + fruit3);
+
+        let fruits = ["apple", "kiwi", "orange", "banana", "grape"];
+        console.log("과일 종류는", fruits);
+        console.log("3번째 과일은? " + fruits[2] + " 입니다."); // 인덱스 번호는 0부터 시작
+        console.log("2번째 과일은? " + fruits[1] + " 입니다."); // 인덱스 번호는 0부터 시작
+        
+        // 🍍🍅apple이 있던 0번 인덱스에 파인애플 추가
+        fruits[0] = "pineapple";
+        console.log(fruits);
+
+        fruits[2] = "tomato";
+        console.log(fruits);
+
+        // pop() : 마지막에 있는 아이템을 뺌
+        fruits.pop();
+        console.log(fruits)
+
+        // push() : 아이템을 배열 마지막에 추가함
+        fruits.push("cherry");
+        console.log(fruits);
+
+        // includes : 포함하고 있는지 묻는다 > true or false
+        console.log(fruits.includes("apple")); // 거짓 (아까 apple 인덱스에 pineapple 삽입)
+    
+        // indexOf : 몇 번째 있는지 묻는다
+        console.log(fruits.indexOf("kiwi"));
+
+        // slice() : 잘라낸다 (기존의 배열이 유지됨)
+        console.log(fruits.slice(3)); // 앞에서 두개 잘라냄
+        console.log(fruits.slice(1,3)); // 시작점, 끝잠 (끝점 미포함, 끝점의 앞자리 까지)
+        fruits.slice(2)
+        console.log(fruits); // 기존의 배열이 유지됨
+
+        // slice와 splice의 차이 > slice한 배열을 새로운 배열에 저장하면 잘린 상태로 저장
+        let otherFruit = fruits.slice(1,3);
+        console.log("새로운 배열", otherFruit);
+
+        // splice(2,1) : 시작점으로 부터 몇개의 아이템 제거
+        // (기존의 배열이 변경됨)
+        fruits.splice(2,2); // 2번 인덱스부터 2개
+        console.log(fruits);
+
+        fruits[1] = "체리";
+        console.log(fruits);
+        console.log(fruits.indexOf("체리"));
+
+        fruits.push("영희", "철수", 1234, 3456, "길동"); // 여러개를 push했을 때 차례대로 배열의 끝에 push 된다.
+        console.log(fruits);
+        console.log(fruits.slice(2));
+        console.log(fruits);
+        console.log(fruits.slice(3)); // 앞에서 3번째까지의 요소가 잘려나감 출력하면 뒤에만 나옴
+
+        // shift() 맨 앞, pop() 맨 뒤의 요소 추출
+        fruits.shift();
+        console.log(fruits); // unshift() 맨 앞에 추가
+
+        // unshift()
+        fruits.unshift("책");
+        console.log(fruits); // unshift() 맨 앞에 추가 
+    </script>
+</body>
+</html>
