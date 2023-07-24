@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 3px 3px 10px black;
+        }
+        button {
+            margin: 10px 0;
+            padding: 5px 10px;
+            border: 3px solid rosybrown;
+            border-radius: 10px;
+            background-color: rosybrown;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px black;
+        }
+        button:hover {
+            transform: translateX(10px);
+            transition: all 0.3s;
+        }
+        .light {
+            padding: 50px;
+            background-color: black;
+            display: flex;
+            justify-content: space-around;
+        }
+        .pic1, .pic2 {
+            visibility: hidden;
+        }
+        .btn1, .btn2 {
+            display: none;
+        }
+        .light.active {
+            background-color: white;
+        }
+        .pic1.active {
+            visibility: visible;
+        }
+        .pic2.active {
+            visibility: visible;
+        }
+        .toggleBtn {
+            display: none;
+        }
+        .btn1.active {
+            display: block;
+        }
+        .btn2.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Who is the cheeze thief?</h2>
+    <div class="light">
+        <div>
+            <img src="../../images/jerry.jpeg" class="pic1">
+            <button class="btn1" onclick="btn1()">choose</button>
+        </div>
+        <div>
+            <img src="../../images/babyjerry.jpg" class="pic2">
+            <button class="btn2" onclick="btn2()">choose</button>
+        </div>
+    </div>
+    <button class="toggleBtn">토글 버튼</button>
+    <button class="lightBtn" onclick="turnOnLight()">Light Switch</button>
+
+    <script>
+        const $light = document.querySelector(".light");
+        const $pic1 = document.querySelector(".pic1");
+        const $pic2 = document.querySelector(".pic2");
+        const $btn1 = document.querySelector(".btn1");
+        const $btn2 = document.querySelector(".btn2");
+        
+        function turnOnLight() {
+            $light.classList.toggle("active");
+            $pic1.classList.toggle("active");
+            $pic2.classList.toggle("active");
+            $btn1.classList.toggle("active");
+            $btn2.classList.toggle("active");
+        }
+        function btn1() {
+            alert("범인을 찾았습니다!")
+        }
+        function btn2() {
+            alert("범인이 아닙니다.")
+        }
+
+    </script>
+</body>
+</html>

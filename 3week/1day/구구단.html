@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+        }
+        div {
+            border: 1px solid gray;
+            background-color: beige;
+            padding: 5px 20px 15px 20px;
+            flex-basis: 60px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            background-color: lightblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for (let n=2; n<=9; n++) {
+            document.write("<div>");
+            document.write("<h3>" + n + "단</h3>");
+            for (j=1; j<=9; j++) {
+                document.write(n + "X" + j + "=" + n*j + "<br>");
+            }
+            document.write("</div>");
+        }
+    </script>
+</body>
+</html>

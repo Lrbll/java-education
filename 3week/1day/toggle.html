@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pic1 {
+            display: block;
+        }
+        .pic2 {
+            display: none;
+        }
+        .pic1.active {
+            display: none;
+        }
+        .pic2.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img src="../../images/bg1.jpg" class="pic1">
+    <img src="../../images/bg2.jpg" class="pic2">
+    <button class="toggleBtn">토글 버튼</button>
+
+    <script>
+        // 상수 선언 시에 사용 - const : 변하지 않는 값
+        const $toggleBtn = document.querySelector(".toggleBtn");
+        const $pic1 = document.querySelector(".pic1");
+        const $pic2 = document.querySelector(".pic2");
+
+        $toggleBtn.addEventListener("click", () => {
+            $pic1.classList.toggle("active"); // active가 없으면 추가
+            $pic2.classList.toggle("active"); // active가 있으면 빼기
+        })
+    </script>
+</body>
+</html>

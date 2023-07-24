@@ -16,6 +16,8 @@
         sum += 4;
         sum += 5;
         document.write("1부터 5까지 합 " + sum + "<br>");
+        document.write(`1부터 5까지의 합 ${sum} <br>`);
+        // 따옴표 대신 ``로 감싸기 변수는 ${}로 감싸기
 
         // for문으로 1부터 5까지 더하기
         let sumFor = 0;
@@ -32,6 +34,38 @@
             total += i;
         }
         document.write("<br>1부터 1000까지의 합 = ", total);
+
+        // 1~10까지 숫자 중 for 짝수만 더하기, 홀수만 더하기
+        // let sumE = 0;
+        // let sumO = 0;
+
+        // for (let e=1; e <= 10; e++) {
+        //     if (e%2 === 0) {
+        //         sumE += e;
+        //     } else {
+        //         sumO += e;
+        //     }
+        // }
+        // document.write("<br><br>1~10 사이의 <b>짝수</b>의 합은 ", sumE);
+        // document.write("<br>1~10 사이의 <b>홀수</b>의 합은 ", sumO);
+        
+        let n = 10;
+        let sumE = 0;
+        for (let i=1; i<=n; i++) {
+            if (i%2 ===1) // i가 홀수라면 건너뜀
+            continue
+            sumE += i;
+            document.write("~~~");
+        }
+
+
+        // ⭐별찍기
+        for (let i=0; i<11; i++) {
+            for (let j=0; j<i; j++) { // j의 초기값이 0 이기 때문에 0~9까지 최대 10번까지 *을 찍어줌
+                document.write("*");
+            }
+            document.write("<br>");
+        }
     </script>
 </body>
 </html>

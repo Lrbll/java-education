@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rect {
+            width: 200px;
+            height: 200px;
+            border: 5px solid olive;
+        }
+    </style>
+</head>
+<body>
+    <div class="rect"></div>
+
+    <script>
+        let $rect = document.querySelector(".rect"); // class-쿼리 셀렉터 / id-getelimentbyID
+        $rect.addEventListener("mouseover", function (){
+            $rect.style.backgroundColor= "green";
+            $rect.style.borderRadius = "50%";
+        });
+        
+        // 마우스 내렸을 때 원상복구 시키려면 따로 설정 해야함
+        $rect.addEventListener("mouseout", function(){
+            $rect.style.backgroundColor = "";
+            $rect.style.borderRadius = "";
+        })
+    </script>
+</body>
+</html>
