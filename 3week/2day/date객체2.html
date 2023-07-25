@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      width: 500px;
+      height: 300px;
+      background: url(../../images/hoonee.jpg) no-repeat;
+      background-size: contain;
+      color: white;
+      text-shadow: -3px -3px 5px black;
+      /* 그림자 왼 위 에 넣으려면 - 붙이기 */
+    }
+    h1 {
+      padding: 8px;
+    }
+    p {
+      padding: 5px 8px;
+      font-weight: bold;
+    }
+    span {
+      color: yellow;
+    }
+    .d-day {
+      font-size: 26px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>공부 시작한지</h1>
+    <p class="d-day">
+      D + <span class="accent" id="result"></span>
+    </p>
+    <p>열심히 해보자 !!</p>
+  </div>
+
+  <script>
+    let now = new Date("2023-07-25");
+    let start = new Date("2023-07-10");
+    // let days = now.getDate() - start.getDate() + 1
+    // document.write(`${days}`);
+
+    let toNow = now.getTime(); // 오늘까지 지난 시간 (밀리 초)
+    let fromStart = start.getTime();
+    let passedTime = toNow - fromStart;
+
+    passedTime = Math.round(passedTime/(1000*60*60*24));
+    // 밀리 초를 일 수로 계산하고 반올림
+    // getTime() 메서드는 특정한 날까지의 시간을
+    // 밀리초(1/1000초)단위로 표시한다
+    document.querySelector(".accent").innerText = passedTime
+  </script>
+</body>
+</html>

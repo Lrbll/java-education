@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            padding-left: 0;
+        }
+        form {
+            padding: 10px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: snow;
+        }
+        img {
+            width: 300px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        .contents {
+            background-color: olive;
+            padding: 10px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            box-shadow: 3px 6px 5px darkgray;
+            font-weight: 600;
+        }
+        input {
+            border-radius: 10px;
+            padding: 3px;
+            margin-right: 2px;
+            transition: all 0.2s;
+        }
+        input:hover {
+            transform: translateY(-3px);
+        }
+        .showResult {
+            margin-top: 40px;
+            background-color: white;
+            border: 1px solid black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 25px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        button:hover {
+            background-color: rgb(37, 37, 37);
+        }
+        p {
+            text-align: center;
+        }
+
+        label {
+            display:inline-block;
+            width:80px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contents">
+        <img src="https://w7.pngwing.com/pngs/148/870/png-transparent-sales-sale-tag-sale-tag-text-logo-thumbnail.png" alt="">
+        <form action="">
+            <ul>
+                <li>
+                    <label for="oPrice">정가</label>
+                    <input type="text" id="oPrice">원
+                </li>
+                <li>
+                    <label for="rate">할인율</label>
+                    <input type="text" id="rate">%
+                </li>
+                <li>
+                    <button onclick="showPrice()">할인가 계산</button>
+                </li>
+            </ul>
+        </form>
+        <div class="showResult">
+            <p>할인가 계산 결과</p>
+            <hr>
+        </div>
+    </div>
+    
+    
+    <script>
+        function showPrice() {
+            // 변수는 함수 안에서 정의 되어야한다.
+            let $originPrice = Number( document.getElementById("oPrice").value);
+            let $rate = Number(document.getElementById("rate").value);
+            let ratePrice = $originPrice * ($rate / 100)
+            let salePrice = $originPrice * ((100 - $rate) / 100);
+            
+            if (rate.value > 0 && rate.value < 100) {
+                event.preventDefault();
+                // 할인율
+                // 할인금액 = 정가 * (할인율/100)
+                // 할인가 = 정가 * ((100-할인율)/100)
+                document.querySelector(".showResult").innerHTML = `<p>할인가 계산 결과 </p><hr>정가 : ${$originPrice}원<br>할인율 : ${$rate}%<br>할인금액 : ${ratePrice}원<br>최종 할인가 : ${salePrice}원 입니다`
+                console.log(`정가 : ${$originPrice}원\n할인율 : ${$rate}%\n할인금액 : ${ratePrice}원\n최종 할인가 : ${salePrice}원 입니다`);
+            } else {
+                console.log($rate);
+                alert(`할인율은 0과 100사이여야 합니다.`);
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

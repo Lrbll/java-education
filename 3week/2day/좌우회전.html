@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="../../images/hoonee.jpg" type="image/x-icon">
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: tomato;
+      margin: 100px auto;
+      transition: all 0.2s;
+    }
+    .btnBox {
+      text-align: center;
+    }
+    button, a {
+      display: inline-block;
+      width: 100px;
+      padding: 6px 3px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      font-weight: bold;
+    }
+    button:active {
+      transform: translateY(5px);
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <div class="btnBox">
+    <button id="leftBtn" onclick="leftBtn()">왼쪽으로</button>
+    <button id="rightBtn" onclick="rightBtn()">오른쪽으로</button>
+  </div>
+  <div class="btnBox">
+    <a href="#" id="smallBtn">작아진당</a>
+    <a href="#" id="bigBtn">커진당</a>
+  </div>
+  <div class="btnBox">
+    <button id="up" onclick="btn(0)">상</button>
+    <button id="under" onclick="btn(1)">하</button>
+    <button id="left" onclick="btn(2)">좌</button>
+    <button id="right" onclick="btn(3)">우</button>
+  </div>
+  <script>
+    // onclick + 함수 선언
+    let $box = document.getElementById("box");
+    let num = 0;
+
+    function leftBtn() {
+      $box.style.transform = `rotate(${num}deg)`
+      num -= 45;
+    }
+    function rightBtn() {
+      $box.style.transform = `rotate(${num}deg)`
+      num += 45;
+    }
+    
+    // addEventListener 이용하기
+    let $smallBtn = document.getElementById("smallBtn");
+    let $bigBtn = document.getElementById("bigBtn");
+
+    $smallBtn.addEventListener("click", e => {
+      e.preventDefault();
+      num = 0.5;
+      $box.style.transform = `scale(${num})`
+    })
+    $bigBtn.addEventListener("click", e => {
+      e.preventDefault();
+      num = 1.5;
+      $box.style.transform = `scale(${num})`
+    })
+
+    // if문 이용하기
+    function btn(btnNum) {
+      if (btnNum == 0) {
+        $box.style.transform = `translateY(-10px)`
+      } else if (btnNum == 1) {
+        $box.style.transform = `translateY(10px)`
+      } else if (btnNum == 2) {
+        $box.style.transform = `translateX(-10px)`
+      } else {
+        $box.style.transform = `translateX(10px)`
+      }
+    }
+  </script>
+</body>
+</html>

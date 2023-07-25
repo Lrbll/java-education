@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <p>addEventListener 사용</p>
+
+    <img src="../../images/trueform.jpg" id="myImg">
+    <br>
+    <button id="onBtn">머슬폼</button>
+    <button id="offBtn">트루폼</button>
+
+    <script>
+        let $myImg = document.getElementById("myImg");
+        let $onBtn = document.getElementById("onBtn");
+        let $offBtn = document.getElementById("offBtn");
+
+        // 함수 실행
+        $onBtn.addEventListener("click", changePic);
+        $offBtn.addEventListener("click", changePic2);
+        
+        function changePic() {
+            $myImg.src = "../../images/muscleform.jpg"
+        }
+        function changePic2() {
+            $myImg.src = "../../images/trueform.jpg"
+        }
+    </script>
+</body>
+</html>

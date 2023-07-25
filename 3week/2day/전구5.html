@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <p>if 사용</p>
+    <img src="../../images/muscleform.jpg" id="pic">
+    <button id="onBtn" onclick="btn(1)">머슬폼</button>
+    <button id="offBtn" onclick="btn(0)">트루폼</button>
+
+    <script>
+        function btn(sw) { // 매개변수 이름 바꿔도 괜찮다
+            let pic;
+            if (sw == 0) {
+                pic = "../../images/trueform.jpg";
+            } else {
+                pic = "../../images/muscleform.jpg";
+            }
+            document.getElementById("pic").src = pic;
+        }
+
+    </script>
+</body>
+</html>

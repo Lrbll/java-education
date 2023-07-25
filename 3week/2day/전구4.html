@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>이미지 마우스오버 - 마우스아웃</p>
+    <img src="../../images/babyjerry.jpg" id="myImg">
+
+    <script>
+        let $myImg = document.getElementById("myImg");
+        $myImg.addEventListener("mouseover", changePic1);
+        $myImg.addEventListener("mouseout", changePic2);
+
+        function changePic1() {
+            $myImg.src = "../../images/jerry.jpeg"
+        }
+        function changePic2() {
+            $myImg.src = "../../images/babyjerry.jpg"
+        }
+    </script>
+</body>
+</html>
