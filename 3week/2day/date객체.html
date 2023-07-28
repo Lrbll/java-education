@@ -28,11 +28,12 @@
     let date = new Date();
     console.log(date);
     console.log(date.getFullYear()); // 년
-    console.log(date.getMonth()); // 월
+    console.log(date.getMonth() + 1); // 월 🟡 getMonth() 는 0~11 사이로 출력되기 때문에 + 1 해주어야함
     console.log(date.getDate()); // 일
     console.log(date.getDay()); // 요일
 
-    document.write(`오늘은 ${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDate()}일 입니다.`);
+    let month = date.getMonth() + 1 // 🟡 getMonth() 는 0~11 사이로 출력되기 때문에 + 1 해주어야함
+    document.write(`오늘은 ${date.getFullYear()}년 ${month}월 ${date.getDate()}일 입니다.`);
     document.write(`<br>지금 시각은 ${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초 입니다.`)
 
     // 요일을 배열로 처리 (인덱스 0~6)

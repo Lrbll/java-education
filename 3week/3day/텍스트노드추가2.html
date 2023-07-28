@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>텍스트 노드 추가</title>
+  <style>
+    p {
+      background-color: lightcoral;
+      display: none;
+    }
+    #closeBtn {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>노드 리스트</h1>
+  <pre>
+    텍스트 노드 추가하기
+    DOM에 새로운 요소를 추가할 때는
+    가장 먼저 요소 노드를 만들어야 한다.
+
+    1. 요소 노드 만들기 createElement() 메서드
+    2. 텍스트 노드 만들기 createTextNode()
+    3. 자식 노드 연결하기 appendChild()
+  </pre>
+  <a href="#" id="openBtn" onclick="openInfo(event)">더 보기</a>
+  <a href="#" id="closeBtn" onclick="closeInfo(event)">닫기</a>
+  <script>
+    let newP = document.createElement("p"); // 1. 요소 노드 만들기 createElement()
+    let textNode = document.createTextNode("추가될 내용 부분"); // 2. 텍스트 노드 만들기 createTextNode()
+    let $openBtn = document.getElementById("openBtn");
+    let $closeBtn = document.getElementById("closeBtn");
+    newP.appendChild(textNode); // 3. 자식 노드 연결하기 appendChild()
+    document.body.appendChild(newP); // p요소 노드를 body 노드의 자식 노드로 추가
+
+    function openInfo() {
+      event.preventDefault();
+      newP.style.display = "block";
+      $openBtn.style.display = "none";
+      $closeBtn.style.display = "block";
+    }
+    function closeInfo() {
+      event.preventDefault();
+      newP.style.display = "none";
+      $openBtn.style.display = "block";
+      $closeBtn.style.display = "none";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원 가입</title>
+  <style>
+    #container {
+      height: 800px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    fieldset {
+      width: 400px;
+      margin: 10px 0;
+    }
+    legend {
+      text-align: center;
+      font-weight: bold;
+      font-size: larger;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin: 5px 0;
+    }
+    label {
+      display: inline-block;
+      width: 120px;
+      font-weight: bold;
+    }
+    .btnList {
+      /* padding-left: 0; */
+      text-align: end;
+    }
+    .btnList li {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <form name="register">
+      <fieldset>
+        <legend>회원가입</legend>
+        <ul>
+          <li>
+            <label for="user_id">아이디</label>
+            <input type="text" id="user_id" placeholder="4~15자리의 영문과 숫자로 입력" required>
+          </li>
+          <li>
+            <label for="email">이메일</label>
+            <input type="email" id="email" required>
+          </li>
+          <li>
+            <label for="passwd1">비밀번호</label>
+            <input type="password" id="passwd1" placeholder="8자리 이상의 비밀번호여야 합니다" required>
+          </li>
+          <li>
+            <label for="passwd2">비밀번호 확인</label>
+            <input type="password" id="passwd2" required>
+          </li>
+          <li>
+            <label for="mailing">메일 수신</label>
+            <!-- input에서 name을 같게, value는 다르게 해야 하나만 선택가능 -->
+            <input type="radio" name="mailing" value="mailing_y">예
+            <input type="radio" name="mailing" value="mailing_n">아니오
+          </li>
+        </ul>
+      </fieldset>
+      <ul class="btnList">
+        <li>
+          <button type="reset">취소</button>
+        </li>
+        <li>
+          <button type="submit">가입하기</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <script>
+    // 아이디 필드를 가져와서 변수에 저장
+    // 비밀번호 필드 가져와서 변수에 저장
+    // 비밀번호 확인 필드 가져와서 변수에 저장
+    let userId = document.querySelector("#user_id");
+    let passwd1 = document.querySelector("#passwd1");
+    let passwd2 = document.querySelector("#passwd2");
+
+     // 스크립트 로드 시간 문제 때문에 .value를 바로 저장하면 안되는 듯?
+    // let test = document.querySelector("#user_id").value; 
+    userId.onchange = checkId; // 아이디 자리수
+    passwd1.onchange = checkPw; // 비밀번호 자리수
+    passwd2.onchange = confirmPw; // 비밀번호 비교
+
+    function checkId() {
+      if (userId.value.length < 4 || userId.value.length > 15) {
+        alert("4~15자리의 영문과 숫자를 사용하세요."); // 오류 메세지 출력
+        userId.select(); // 다시 입력할 수 있도록 userID필드 선택 (드래그) 해놓음
+      }
+    }
+    function checkPw() {
+      if (passwd1.value.length < 8) {
+        alert("8자리 이상의 비밀번호여야 합니다.");
+        passwd1.focus();
+      }
+    }
+    function confirmPw() {
+      if (passwd2.value != passwd1.value) {
+        alert("비밀번호가 일치하지 않습니다.");
+        passwd2.focus();
+      }
+    }
+  </script>
+</body>
+</html>

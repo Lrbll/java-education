@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: tomato;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo {
+      margin: 20px 0;
+    }
+    .imgBox {
+      width: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    #small {
+      cursor: pointer;
+      width: 150px;
+    }
+    .click_img {
+      width: 600px;
+      display: flex;
+      justify-content: center;
+    }
+    #big {
+      width: 90%;
+    }
+    ul {
+      margin-top: 50px;
+      display: none;
+      list-style: none;
+      text-align: center;
+      padding-left: 0;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+    ul li {
+      width: 300px;
+      padding: 5px;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div>
+      <img src="https://www.mcdonalds.co.kr/kor/images/common/logo.png" alt="logo" class="logo">
+    </div>
+    <div class="imgBox">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1686626692689.png" id="small">
+      <img src="https://www.mcdonalds.co.kr/uploadFolder/product/prov_201902070318045120.png" id="small">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1688446450190.png" id="small">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1583727855319.png" id="small">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1583727501907.png" id="small">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1583728352960.png" id="small">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1599119647587.png" id="small">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1583727649835.png" id="small">
+    </div>
+    <ul id="info_list">
+      <li>케이준 비프 스낵랩</li>
+    </ul>
+    <ul id="info_list">
+      <li>후렌치 후라이</li>
+    </ul>
+    <ul id="info_list">
+      <li>진도 대파 크림 크로켓 버거</li>
+    </ul>
+    <ul id="info_list">
+      <li>빅맥</li>
+    </ul>
+    <ul id="info_list">
+      <li>더블 쿼터파운더 치즈</li>
+    </ul>
+    <ul id="info_list">
+      <li>맥스파이시 상하이 버거</li>
+    </ul>
+    <ul id="info_list">
+      <li>1955 버거</li>
+    </ul>
+    <ul id="info_list">
+      <li>맥치킨 모짜렐라</li>
+    </ul>
+    <div class="click_img">
+      <img src="" id="big">
+    </div>
+  </div>
+
+  <script>
+    let big = document.getElementById("big");
+    let smallPic = document.querySelectorAll("#small");
+    let info = document.querySelectorAll("#info_list");
+
+    for (let i = 0; i < smallPic.length; i++) {
+      smallPic[i].addEventListener("mouseover", function(event) {
+        changePic(event, smallPic[i], info[i]); // 인수로 smallPic[i]과 info[i]를 넘겨줌
+      });
+      smallPic[i].addEventListener("mouseout", function(event) {
+        hiddenPic(event, smallPic[i], info[i]);
+      });
+    }
+
+    function changePic(event, smallPicItem, infoItem) { // 매개 변수를 통해 smallPic[i]등의 값을 간접적으로 사용
+      let newPic = smallPicItem.src;
+      big.setAttribute("src", newPic);
+      infoItem.style.display = 'block';
+    }
+    function hiddenPic(event, smallPicItem, infoItem) {
+      let newPic = "";
+      big.setAttribute("src", newPic);
+      infoItem.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

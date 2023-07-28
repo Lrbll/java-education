@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #container {
+      width: 300px;
+      height: 1500px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .arrow {
+      z-index: 100; /* 맨 위로 올라오게 */
+      height: 50px;
+      font-size: 2em;
+      padding: 10px;
+      background-color: white;
+      opacity: 0.2;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      opacity: 0.6;
+    }
+    #left {
+      border-radius: 0 10px 10px 0;
+    }
+    #right {
+      border-radius: 10px 0 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>어른제국의 역습 - 히로시의 회상</h1>
+  <div id="container">
+    <div class="arrow" id="left">&lang;</div>
+    <div class="arrow" id="right">&rang;</div>
+  </div>
+
+  <script>
+    const container = document.querySelector("#container"); // 사진 영역
+    const pics =[`짱구1.jpg`, `짱구2.jpg`, `짱구3.jpg`, `짱구4.jpg`, `짱구5.jpg`, `짱구6.jpg`] // 이미지 배열
+    
+    container.style.background = `url("../../images/${pics[0]}") no-repeat`; // 첫번째 이미지 보이게
+    container.style.backgroundSize = "contain";
+
+    const arrows = document.querySelectorAll(".arrow"); // 화살표 모두 가져와서
+    let i = 0;
+
+    // forEach : 베열의 요소를 가져와서 함수 실행해야 할 대 편리하게 사용할 수 있다 (for 와 비슷)
+    arrows.forEach(arrow => {
+      arrow.addEventListener("click", (e) => {
+        if (e.target.id === "left") { // 왼쪽 화살표 클릭인지
+          i--; // 이전 이미지 이동
+          if (i<0) {
+            i = pics.length -1; // 맨 마지막 이미지로 이동
+          }
+        } else if (e.target.id === "right") {
+          i++; // 다음 이미지 이동
+          if (i>5) {
+            i = 0; // 맨 처음 이미지로 이동
+          }
+        }
+        container.style.backgroundImage = `url("../../images/${pics[i]}")`; // 현재 이미지 표시
+      });
+    });
+    // 우클릭 막기
+    window.addEventListener("contextmenu", e => {
+      e.preventDefault();
+      
+    })
+
+  </script>
+</body>
+</html>

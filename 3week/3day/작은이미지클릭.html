@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #big {
+      width: 500px;
+      height: 350px;
+    }
+    .small {
+      width: 150px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1></h1>
+    <div id="pic">
+      <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1688446450190.png" id="big">
+      <div id="small_pic">
+        <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1688446450190.png" class="small">
+        <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1583727855319.png" class="small">
+        <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1583728352960.png" class="small">
+        <img src="https://www.mcdonalds.co.kr/upload/product/pcfile/1599119647587.png" class="small">
+      </div>
+    </div>
+
+    <div id="desc">
+      <ul>
+        <li>이름</li>
+        <li>설명</li>
+        <button>좋아요</button>
+      </ul>
+      <a href="#" id="view">상세설명</a>
+    </div>
+  </div>
+
+  <script>
+    let big = document.querySelector("#big");
+    let smallPics = document.querySelectorAll(".small");
+
+    for (let i=0; i<smallPics.length; i++) {
+      smallPics[i].addEventListener("click", changePic);
+    }
+    function changePic() {
+      let newPic = this.src;
+      big.setAttribute("src", newPic);
+    }
+  </script>
+</body>
+</html>

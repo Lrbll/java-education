@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .tab_button {
+      width: 150px;
+      padding: 10px 40px;
+      cursor: pointer;
+    }
+    .tab_content {
+      border: 1px solid;
+      width: 420px;
+      padding: 20px;
+      display: none;
+    }
+    .tab_button.active {
+      background-color: pink;
+    }
+    .tab_content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="tabs">
+      <button class="tab_button active" onclick="openTab(event, 'tab1')">탭1</button>
+      <button class="tab_button" onclick="openTab(event, 'tab2')">탭2</button>
+      <button class="tab_button" onclick="openTab(event, 'tab3')">탭3</button>
+    </div>
+    <div id="tab1" class="tab_content">
+      <h1>제목</h1>
+      <p>탭 1의 내용입니다</p>
+    </div>
+    <div id="tab2" class="tab_content">
+      <h1>제목</h1>
+      <p>탭 2의 내용입니다</p>
+    </div>
+    <div id="tab3" class="tab_content">
+      <h1>제목</h1>
+      <p>탭 3의 내용입니다</p>
+    </div>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) { // 매개변수와 인수
+      // 모든 탭 내용 안보이게
+      const tabContents = document.querySelectorAll(".tab_content");
+      for (const content of tabContents) {
+        content.style.display = `none`;
+      }
+
+      // 모든 탭 버튼에서 active 클래스를 제거
+      const tabButtons = document.querySelectorAll(`.tab_button`);
+      for (const button of tabButtons) {
+        button.classList.remove('active');
+      }
+
+      // 선택한 탭 내용 보여주고 active 클래스를 추가
+      document.getElementById(tabName).style.display = 'block';
+      evt.currentTarget.classList.add('active');
+    }
+
+    // 페이지 열리면 첫 번째 페이지는 보이게
+    document.getElementById(`tab1`).style.display = `block`;
+  </script>
+</body>
+</html>

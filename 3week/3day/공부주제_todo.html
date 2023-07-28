@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공부할 주제</title>
+  <style>
+    body {
+      background-color: rgb(215, 245, 255);
+    }
+    #container {
+      width: 500px;
+      height: 800px;
+      border-left: 1px solid;
+      border-right: 1px solid;
+      text-align: center;
+      margin: 0 auto;
+    }
+    ul {
+      width: 200px;
+      margin-left: 110px;
+      text-align: start;
+    }
+    li {
+      cursor: pointer;
+      font-size: large;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>TO DO LIST</h1>
+    <p>할 일</p>
+    <form>
+      <input type="text" id="subject" autofocus>
+      <button onclick="newRegister(); return false;">+</button>
+      <!-- return false; 는 버튼 기능린 submit 역할을 취소함
+      입력하지 않으면 함수를 실행하기 전에 기본 기능을 먼저함 -->
+      <hr>
+      <ul id="itemList"></ul>
+    </form>
+  </div>
+
+  <script>
+    function newRegister() {
+      let newItem = document.createElement("li"); // 요소 노드 추가
+      let $subject = document.getElementById("subject"); // 폼의 텍스트 필드
+      let newText = document.createTextNode(subject.value); // 텍스트 필드의 값을 텍스트 노드로 만들기
+      newItem.appendChild(newText); // 텍스트노드를 요소노드(li)의 자식노드로 추가(연결)
+
+      let $itemList = document.getElementById("itemList"); // 웹 문서에서 부모 노드 가져오기
+      $itemList.insertBefore(newItem, $itemList.childNodes[0]); // 🔥입력 했을 때 맨 위에 붙음
+      // $itemList.appendChild(newItem); // 입력된 내용이 아래에 추가딤
+      $subject.value = ""; // 🔥폼의 필드값 지워지게 만들기
+
+      let items = document.querySelectorAll("li");
+      for (let i=0; i < items.length; i++) {
+        items[i].addEventListener("click", function(){ // 추가된 li 요소를 클릭하면 삭제됨
+          this.style.textDecoration = "line-through";
+          
+          // if (this.parentNode) // 부모노드가 있다면 (삭제시 부모노드에서 해야하기 때문)
+          //   this.parentNode.removeChild(this); // 부모 노드에서 삭제
+        })
+      }
+    }
+  </script>
+</body>
+</html>

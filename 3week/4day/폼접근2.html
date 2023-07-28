@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: lightskyblue;
+    }
+    #container {
+      width: 350px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 15px;
+      background-color: linen;
+      box-shadow: 3px 3px 10px black;
+    }
+    h1 {
+      box-shadow: 0 3px 4px gray;
+      padding: 10px 5px;
+      color: white;
+      background-color: lightslategray;
+      border-radius: 3px;
+    }
+    form {
+      text-align: center;
+    }
+    input {
+      width: 300px;
+      margin-top: 10px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 10px 5px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 25px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 30px;
+      background-color: lightgray;
+      box-shadow: 2px 2px 5px rgb(87, 87, 87);
+      font-weight: bold;
+    }
+    button:hover {
+      cursor: pointer;
+      color: white;
+      background-color: lightslategray;
+      box-shadow: 2px 2px 5px rgb(0, 41, 0);
+      transition: all 0.2s;
+    }
+    .result_box {
+      width: 300px;
+      height: 50px;
+      border: 1px solid;
+      font-size: 16px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 최대 공약수 구하기 -->
+  <div id="container">
+    <form name="count_form">
+      <h1>최대공약수 계산기</h1>
+      <p>두 수를 입력한 후, [계산하기]를 눌러주세요</p>
+      <input type="text" id="num1" placeholder="첫 번쨰 수">
+      <input type="text" id="num2" placeholder="두 번째 수">
+      <button id="count_btn">계산하기</button>
+    </form>
+    <div class="result_box"></div>
+  </div>
+
+  <script>
+    // 각 입력값을 변수로 받아온다
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+
+    // result 변수에는 결과 값을
+    function newText() {
+      let resultBox = document.querySelector(".result_box");
+      resultBox.innerHTML = getGCD(num1.value, num2.value);
+    }
+
+    // click 하면 함수 실행
+    let $btn = document.getElementById("count_btn");
+    $btn.onclick = function(event) {
+      event.preventDefault(); // 버튼 클릭시 새로고침 막기
+      newText();
+    };
+
+    // 받아 온 두 값 비교
+    // 나누어서 나머지 0이 되도록 두값 모두 &&
+    function getGCD(a, b) {
+      let max = a > b ? a : b; // 최대값을 max에 대입
+      let GCD = "두 수는 공약수가 존재하지 않는 '서로소' 관계입니다";
+      for (let i=2; i<=max; i++) {
+        if (a % i === 0 && b % i === 0) {
+          GCD = "두 수의 최대공약수는 " + i + " 입니다";
+        }
+      }
+      return GCD;
+    }
+  </script>
+</body>
+</html>

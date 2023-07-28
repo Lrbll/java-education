@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    fetch("https://dummyjson.com/quotes")
+      .then(response => response.json())
+      .then(quotes => console.log(quotes));
+    // 콘솔에서 확인해보기 > quotes 배열이 출력되고 있음
+
+    // async function init() { // 비동기식으로 접근 (기다려라)
+    //   const response = await fetch("https://dummyjson.com/quotes");
+    //   const quotes = await response.json();
+    //   console.log(quotes);
+    //   display(quotes);
+    // }
+    // function display(a) {
+    //   const result = document.querySelector("#result");
+    //   let string = "";
+    //   a.forEach(quote => {
+    //     string += `
+    //     <table>
+    //       <tr>
+    //         <th>번호</th><td>${quote.id}</td>
+    //       </tr>
+    //       <tr>
+    //         <th>명언</th><td>${quote.quote}</td>
+    //       </tr>
+    //       <tr>
+    //         <th>저자</th><td>${quote.author}</td>
+    //       </tr>
+    //     </table>
+    //     `;
+    //   });
+    //   result.innerHTML = string;
+    // }
+    // init(); // 함수 실행부분
+  </script>
+</body>
+</html>

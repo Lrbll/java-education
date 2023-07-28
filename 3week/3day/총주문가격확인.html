@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      background-color: rgb(243, 239, 189);
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+      width: 350px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      background-color: olivedrab;
+    }
+    fieldset {
+      background-color: whitesmoke;
+    }
+    legend {
+      background-color: grey;
+      color: whitesmoke;
+      padding: 3px;
+    }
+    #newText {
+      border: 1px solid;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    #newText {
+      background-color: rgb(243, 239, 189);
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>총 주문가격 확인</h1>
+    <fieldset>
+      <legend>기본가격</legend>
+      <ul>
+        <li>
+          <p>30000원</p>
+        </li>
+      </ul>
+    </fieldset>
+    <form name="count">
+      <fieldset>
+        <legend>추가주문</legend>
+        <ul>
+          <li>
+            <input type="checkbox" class="chBox" id="addLength" name="addLength">
+            <label for="addLength">기장추가 (1200원)</label>
+          </li>
+          <li>
+            <input type="checkbox" class="chBox" id="addShipping" name="addShipping">
+            <label for="addShipping">배송비 (3000원)</label>
+          </li>
+          <li>
+            <input type="checkbox" class="chBox" id="addMount" name="addMount">
+            <label for="addMount">산간지역 추가 배송비 (800원)</label>
+          </li>
+          <li>
+            <input type="checkbox" class="chBox" id="addSocks" name="addSocks">
+            <label for="addSocks">양말 (2개, 4800원)</label>
+          </li>
+          <li>
+            <input type="checkbox" class="chBox" id="addPack" name="addPack">
+            <label for="addPack">선물포장 (2400원)</label>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+    <fieldset>
+      <legend>합계</legend>
+      <ul>
+        <li>
+          <div id="newText"></div>
+        </li>
+      </ul>
+    </fieldset>
+  </div>
+
+  <script>
+    let dftPrice = 30000; 
+    let checkList = document.querySelectorAll(".chBox")
+    let priceList = [1200, 3000, 800, 4800, 2400];
+    let totalPrice = dftPrice;
+    
+    function updateTotalPrice() { // total이 계속 업데이트 되어줘야함
+    let newS = document.createElement("span");
+    let newT = document.createTextNode(totalPrice + "원");
+    let newDiv = document.querySelector("#newText");
+
+    newDiv.innerHTML = ""; // 새로운 text가 계속 생성되기 때문에 체크박스가 클릭될때 마다 지워짐
+    newDiv.appendChild(newS);
+    newS.appendChild(newT);
+  }
+
+    for (let i=0; i<checkList.length; i++){
+      // checkList[i].onclick = function(){} // 이렇게 작성할 수도 있다.
+      checkList[i].addEventListener("click", function(){
+        if (this.checked == true) { // checked : 체크가 되어있으면
+          totalPrice += priceList[i];
+        } else {
+          totalPrice -= priceList[i];
+        }
+        updateTotalPrice(); // total이 계속 업데이트 되어줘야함
+      });
+    }
+    updateTotalPrice(); // 새로고침 후 아무것도 실행하지 않았을 때
+  </script>
+</body>
+</html>

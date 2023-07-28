@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 스코프</title>
+</head>
+<body>
+  <script>
+    // 변수 스코프
+    // scope : 범위 (지역 변수와 전역 변수)
+    // 지역변수(var, let, const) : 하나의 파일 안에서만 혹은 선언된 함수내에, for문 안에서만 사용가능
+    // 전역변수 : 글로벌하게 전부 연결
+    // 🍊 var : 변수 재선언과 재할당이 가능하다
+    function addNum(a, b) {
+      return a+b;
+    }
+    var sum = addNum(3, 4);
+    console.log(sum);
+
+    var sum = 50; // 변수 재선언 가능
+    console.log(sum);
+
+    sum = 100; // 변수 재할당 가능
+    console.log(sum);
+
+    // 🍊 let : 재할당만 가능하다
+    // function addNum2(n) {
+    //   sum = 0;
+    //   for (let i = 0; i < n+1; i++) {
+    //     sum += i;
+    //   }
+    //   sum = 300; // 변수 재할당 가능
+    //   console.log(sum);
+    // }
+    // addNum2(10);
+
+    // 🍊 const : 재선언, 재할당 모두 불가
+  </script>
+</body>
+</html>

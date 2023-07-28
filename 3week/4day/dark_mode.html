@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 100vh;
+      /* display: flex; */
+      /* justify-content: center;
+      align-items: center; */
+    }
+    header {
+      position: fixed;
+      width: 100%;
+      background-color: white;
+      padding: 15px 20px;
+      box-shadow: 2px 2px 10px gray;
+    }
+    .logo {
+      margin: auto 0;
+    }
+    .logo a {
+      text-decoration: none;
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    nav {
+      margin: 0 auto;
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+    }
+    /* #toggle_box {
+      position: fixed;
+      top: 5%;
+      right: 5%;
+    } */
+    button {
+      border: none;
+    }
+    #toggle_box img {
+      cursor: pointer;
+      width: 70px;
+      height: 70px;
+    }
+    #contents {
+      width: 420px;
+      height: 150px;
+      border: 5px dashed olive;
+      font-weight: bold;
+      text-align: center;
+      background-color: lightpink;
+      border-radius: 5%;
+    }
+    pre {
+      line-height: 2;
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .dark {
+      background-color: #222;
+    }
+    .dark #contents {
+      /* width: 420px;
+      height: 150px; */
+      /* font-weight: bold;
+      text-align: center; */
+      /* border-radius: 5%; */
+      border: 5px dashed lemonchiffon;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="#">DARK MODE</a></div>
+      <div id="toggle_box">
+        <button><img src="../../images/sun01.png" class="dark_img"></button>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- <div id="contents">
+    <pre>
+      classList와 toggle 메서드를 사용하여
+      스타일을 껐다 켰다 할 수 있다
+
+      오른쪽 위 버튼을 눌러보세요!
+    </pre>
+  </div> -->
+  
+  <script>
+    const $btn = document.querySelector("button");
+    const $img = document.querySelector(".dark_img");
+
+    $btn.onclick = function(){
+      document.body.classList.toggle("dark");
+      let $darkBtn = document.querySelector(".dark_img")
+      let imgSrc = $darkBtn.src;
+      if (imgSrc = "../../images/sun01.png") {
+        $darkBtn.setAttribute("src", "../../images/moon01.png");
+        imgSrc = "../../images/moon01.png"
+      } else {
+        $darkBtn.setAttribute("src", "../../images/sun01.png");
+        imgSrc = "../../images/sun01.png"
+      }
+      // 껐다 켰다, classList = dark 클래스가 생겼다 없어졌다 한다.
+    }
+  </script>
+</body>
+</html>

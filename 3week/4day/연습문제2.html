@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+    #container {
+      width: 750px;
+      height: 750px;
+      margin: auto;
+      border: 5px dashed;
+      border-radius: 50%;
+      background:  url(../../images/bg5.jpeg);
+      font-family: 'Noto Serif KR', serif;
+      color: rgba(255, 255, 255, 0.7);
+      text-shadow: 2px 2px 5px black;
+    }
+    .img_box {
+      padding: 50px;
+      text-align: center;
+    }
+    .img_box img {
+      width: 200px;
+      cursor: pointer;
+    }
+    .fortune_box {
+      margin: 0 auto;
+      width: 500px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="img_box">
+      <h1>수정 구슬을 클릭하세요</h1>
+      <img onclick="update()" src="../../images/crystalBall.png" alt="">
+    </div>
+    <div class="fortune_box"></div>
+  </div>
+  
+  <script>
+    // 배열의 형태로 글귀 10개 저장하기
+    let fortune = [];
+    fortune[0] = "당신의 창의력이 높아지는 때입니다. 새로운 것에 몰두하면 좋은 결과가 있을 것입니다."
+    fortune[1] = "괜찮아요. 우리에게는 내일이 있잖아요. 파이팅!"
+    fortune[2] = "작은 말이라도, 칭찬해보세요. 칭찬은 고래도 춤추게 한다잖아요."
+    fortune[3] = "오늘 행운의 색은 파랑색 입니다. 쿨한 모습이 행운을 가져다줍니다."
+    fortune[4] = "이번 주 행운의 아이템은 볼펜입니다."
+    fortune[5] = "힘들어도 이겨내고 앞으로 나가는 당신의 모습이 아름답습니다. 더 좋은 날이 올 거예요."
+    fortune[6] = "문제의 정답은 당신 마음속에 있습니다. 어떻게 하고 싶은지 생각해보세요."
+    fortune[7] = "일이 잘 풀리지 않아도 실망하지 마세요. 오히려 기회가 될 수 있습니다."
+    fortune[8] = "오늘 행운의 색은 노란색 입니다. 밝고 발랄한 미소가 포인트예요."
+    fortune[9] = "행운의 메시지 결과 한 발 더 내 딛는 것보다 당신의 마음을 추스르는 것이필요할 때 입니다."
+  
+    // 랜덤하게 화면에 표시
+    // ASCII코드 따옴표 사용해서 화면에 출력 document.write
+    function update() {
+      let index = Math.floor(Math.random()*10);
+      let newfortune = `<p>&quot; ${fortune[index]} &quot;</p>`;
+      let fortuneBox = document.querySelector(".fortune_box");
+      fortuneBox.innerHTML = "<p>" + newfortune + "</p>"
+    }
+  </script>
+</body>
+</html>
